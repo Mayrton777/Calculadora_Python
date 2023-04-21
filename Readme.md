@@ -1,0 +1,1 @@
+Uma calculadora feita em Python para estudos da LP.
