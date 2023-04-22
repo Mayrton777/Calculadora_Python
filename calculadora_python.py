@@ -1,5 +1,8 @@
+import math
+
 print("Calculadora Python")
 
+#loop
 while True:
     try:
         #Entrada num1
@@ -10,8 +13,14 @@ while True:
             break
 
         num1 = float(num1)
-        #Entrada operador e num2
-        operador = input("Digite o operador '+, -, *, /, **, %': ")
+        #Entrada operador
+        operador = input("Digite o operador '+, -, *, /, **, raiz': ")
+
+        if operador == 'raiz':
+            resultado = math.sqrt(num1)
+            print("A raiz de {} é {:.2f}".format(num1,resultado))
+            continue
+
         num2 = float(input("Digite o segundo número: "))
 
         #Operadores
@@ -25,8 +34,6 @@ while True:
             resultado = num1 / num2
         elif operador == '**':
             resultado = num1 / num2
-        elif operador == '%':
-            resultado = num1 % num2
         else:
             print("Operador invalido")
             resultado = None
