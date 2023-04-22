@@ -1,18 +1,38 @@
 print("Calculadora Python")
 
-num1 = float(input("Digite o primeiro número: "))
-operador = input("Digite o operador '+, -, *, /': ")
-num2 = float(input("Digite o segundo número: "))
+while True:
+    try:
+        #Entrada num1
+        num1 = input("Digite o primeiro número ou 'q' para sair: ")
 
-if operador == '+':
-    resultado = num1 + num2
-elif operador == '-':
-    resultado = num1 - num2
-elif operador == '*':
-    resultado = num1 * num2
-elif operador == '/':
-    resultado = num1 / num2
-else:
-    print("Operador invalido")
+        #Condição para sair do loop
+        if num1 == 'q':
+            break
 
-print("O resultado é", resultado)
+        num1 = float(num1)
+        #Entrada operador e num2
+        operador = input("Digite o operador '+, -, *, /, **, %': ")
+        num2 = float(input("Digite o segundo número: "))
+
+        #Operadores
+        if operador == '+':
+            resultado = num1 + num2
+        elif operador == '-':
+            resultado = num1 - num2
+        elif operador == '*':
+            resultado = num1 * num2
+        elif operador == '/':
+            resultado = num1 / num2
+        elif operador == '**':
+            resultado = num1 / num2
+        elif operador == '%':
+            resultado = num1 % num2
+        else:
+            print("Operador invalido")
+            resultado = None
+
+        #Resultado
+        if resultado is not None:
+            print("O resultado é: {:.2f}".format(resultado))
+    except ValueError:
+        print("Valor inválido! Por favor, digite um valor válido.")
